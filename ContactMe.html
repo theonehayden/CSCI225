@@ -1,179 +1,132 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <title> CSCI225 Homepage of Hayden Comer </title>
-    </head>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/ContactMe.css">
+
+</head>
 
 <body>
+    
     <div class="container">
-        <div class="row">
+        <div class="fixed-top">
+            <div class="row">
                 <div class="col">
-                    <div class="navbar-expand-lg navbar-light bg-dark">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link text-white" href="https://www.usc.edu" > university Website </a> 
-                            <li class="nav-item"><a class="nav-link text-white" href="#assigment" > university Website </a>
-                            <li class="nav-item"><a class="nav-link text-white" href="#contact" > university Website </a> 
-                            <li class="nav-item"><a class="nav-link text-white" href="https://github.com" > Github Website</a> 
-                            <li class="nav-item"><a class="nav-link text-white" href="https:open.spotify.com" > university Website </a> 
-
-
-
-
-                        </ul>
-                    </div>
-                    <form action="">
-                        <p> Email: <input type="name@domain.com" name="mail"></p>
                    
-                        <div class="form-group">
-                            <p>Would you recommend our website?</p>
-                            <p> <label class="form-check-label" for=""><input type="radio" class="fomr-check-input" name="recommend" value="yes"></label>yes</p>
-                            <p><input type="radio" name="recommend" value="no">no</p>
+                        <div class="navbar navbar-expand-lg navbar-light bg-dark">
+                            <ul class="navbar-nav">
+                                
+                                <li class="nav-item"><a class="nav-link text-white" href="https://www.usca.edu">University of South Carolina Aiken's Website</a></li>
+                                <li class="nav-item"><a class="nav-link text-white" href="#assignment">Assignments</a></li>
+                                <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact Information</a></li>
+                                <li class="nav-item"><a class="nav-link text-white" href="https://github.com/theonehayden">My GitHub</a></li>
+                                <li class="nav-item"><a class="nav-link text-white"  href="https://www.youtube.com/channel/UCVpyx-2HpFTSN-CCHQOVznA">My favorite band</a></li>
+                                
+                            </ul>
                         </div>
-                        <P>Select your faborite website:
-                            <select name="website" size="4" multiple>
-                                <option value="google">google</option>
-                                <option value="facebook">facebook</option>
-                                <option value="twitter">twitter</option>
-                                <option value="time">time</option>
-                                <option value="youtube">youtube</option>
-                            </select>
+                    
+                </div>
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col">
+                <p>USC Aiken Virtual Tour</p>
 
-                                <div class="form-group">
-                                    <p>
-                                        <textarea name="form-control" name="comment" cols="30" rows="10">No Comment</textarea>
-                                    </p>
-                                </div>
+                <p>
+                    <!-- video-->
+                    <iframe class="border rounded" width="400" height="250" src="https://www.youtube.com/embed/tBFErdYD1wU"
+                        title="Youtube player"></iframe>
+                </p>
+            </div>
+            <div class="col">
+                <form name="feedback">
+                    
+                    <!-- name -->
+                    <p>First Name: <input type="text" placeholder="anonymous" name="fname" required></p>
+                    <p>Last Name: <input type="text" placeholder="anonymous" name="lname" required></p>
 
+                    <!-- email -->
+                    <div class="form-floating mb-3"> 
+                        <input type="email" class="form-control" placeholder="name@domain.com" name="mail" id="email">
+                        <label for="email" > Email: </label>
 
-
-
-
-
-                         </P>
-                   <div class="row">
-                    <div class="col">
-                        <p>USC Aiken Virtual Tour</p>
-
-
-
-
+                        <small class="form-text text-muted">
+                            Your email will not be shared.
+                        </small>
 
                     </div>
+                    <div class="form-floating mb-3">
 
-                   </div>
-                <!--name-->
-                   <p>First name: <input type="text" placeholder="anonymous" name="fname" required></p>
-                   <p>Last name: <input type="text" placeholder="anonymous" name="lname" required></p>
+                        <input type="password" class="form-control" placeholder="password" name="password" id="password">
+                        <label for="password" > Password: </label>
 
+                        <small class="form-text text-muted">
+                                Your Password is private
+                        </small>
 
-                   <!--email-->
-                   <div class="form-floating mb-3"></div>
-                    <input type="email" placeholder="name@domain.com" name="mail" id="email">
-                    <label for="email"> Email</label>
-
-                    <small class="form-text text-muted">
-                        Your email will not be shared
-                    </small>
-                 </div>
-                 <!--phone number-->
-                   <div class="form-group">
-                    <p>phone number: <input type="tel" class="fomr-control" placeholder="123-456-7890" pattern="\d(3)-\d(3)-\d(4)"></p>
-                   </div>
-                   
-                   
-                   
-                   
-                    
-                   
-                   
-                   
-                   
-                   
-                   
-                    </form>
-
-
-
-
+                    </div>
+                    <!-- phone number -->
+                    <div class="form-group"> 
+                    <p> Phone number: <input type="tel" class="form-control" placeholder="123-456-7890" pattern="\d{3}-\d{3}-\d{4}"
+                            name="tel" required></p>
+                    </div>
+                    <!-- Date -->
+                    <div class = "form-group">
+                    <p>
+                        Date: <input type="date" class="form-control" name="date">
+                    </p>
+                    </div>
+                    <!-- recommendation -->
+                    <div class="form-group">
+                    <p>Would you recommend your website?</p>
+                    <p><label class="form-check-label"> <input type="radio" class="form-check-input" name="recommend" value="yes">yes </label></p>
+                    <p><label class="form-check-label"> <input type="radio" class="form-check-input" name="recommend" value="no">no </label></p>
+                    </div>
+                    <!-- favorite website -->
+                    <p> Select your favorite website:
+                        <select name="website" size="4" multiple>
+                            <option value="google">Google</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="twitter">Twitter</option>
+                            <option value="time">Time</option>
+                            <option value="youtube">Youtube</option>
+                        </select>
+                        </p>
+                        <!-- comments -->
+                        <div class="form-group">
+                    <p>
+                        <textarea class="form-control" name="comment" cols="30" rows="10">No Comments</textarea>
+                      
+                    </p>
                 </div>
 
+                    <!-- rating -->
+                    <div class="form-group">
+                        <p>  How would you rate this website? </p>
+                      1<input type="range" class="form-range" name="score" min="0" max="10">10
+                        </div>  
+                    <!-- submit -->
+                    <p><input type="submit" class="form-control" value="Submit" formnovalidate></p>
+                    <p><input type="reset" value="Clear the form"></p>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" value="its in the code ->" disabled>Can you figure out how to click this?</label>
+                    </div>
+
+
+                </form>
+            </div>
         </div>
-
     </div>
-
+    <!-- BootStrap javascript file -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/4Nv1qRjJMII?si=q_8w9V1ZVtW7Kx5_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <form action="">
-        <fieldset>
-        <h1>Feedback</h1>
-        <h2>Enter information below</h2>
-        <p>First Name:<input type="First name" placeholder="anonymous" name="fname" required> Last Name:<input type="Last name" placeholder="anonymous" name="lname" required></p>
-        <p>Email:<input type="email" placeholder="name@domain.com" name="mail"></p>
-        <h2>Date of Birth:</h2>
-        <p><input type="date" name="date"></p>
-        <h2>Would you recommend this website to others?</h2>
-        <p> <input type="radio" name="recommend" value="Yes">Yes <input type="radio" name="recommend" value="No">No</p>
-        <h2>Select your favorite website:</h2>
-        <select name="browser" size="1" multiple>
-            <option value="Firefox">Firefox</option>
-            <option value="Chrome">Chrome</option>
-            <option value="Safari">Safari</option>
-            <option value="Edge">Edge</option>
-        </select>
-SS
-
-
-
-
-
-
-
-
-        <h2>How would you rate this website on a scale of 1 to 10?</h2>
-        <p>Rating<input type="range" name="rating" min="1" max="10"></p>
-        <h2>How would you rate the appearance of this website on a scale of 1 to 10?</h2>
-        <p> Appearance: <input type="number" name="rating" min="1" max="10"> </p>
-        <h2>Which of the following writing utencils do you use daily?</h2>
-        <p>
-            pen: <input type="checkbox" id="utencil0" name="Pen" value="Pen">
-            Pencil:<input type="checkbox" id="utencil1" name="Pencil" value="Pencil">
-            Ink and Quil: <input type="checkbox" id="utencil2" name="ink and quil" value="ink and quil">
-            Knife and Stone tablet:<input type="checkbox" id="utencil3" name="knife and stone tablet" value="Kife and stone tablet">
-            Mechanical Pencil: <input type="checkbox" id="utencil4" name="mechanical pencil" value="Mechanical Pencil">
-        </p>
-        <h2>Comments:</h2>
-        <p> <textarea name="comment" id="" cols="30" rows="10"></textarea></p>
-        
-        <P> <input type="submit" value="submit" formnovalidate></P>
-        
-        </fieldset>
-        
-        </form>
-
-
-
-
-
-
-
-</html>
