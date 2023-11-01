@@ -5,12 +5,133 @@
     </head>
 
     <body>
-        <div>
+        
+        <div class="container">
             <h1>Georgia Power Bill Calculator:</h1>
-            <p>This is a placeholder for information</p>
+            
+            
+            <p>Enter your monthly usage in kilowatt hours (kWh):<input type="text" id="usage"></p>
+            <p>Enter the number of days for your current period: <input type="text" id="days"></p>
+            <p>Is your residence INSIDE the city limits of your city? <select name="inside" id="inside">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select></p>
+            <p>Is this a summer month(June-September)?<select name="summer" id="summer">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select></p>
+            <p>Enter Sales Tax <input type="text" id="taxrate"></p>
+            <p><input type="button" id="doIt"value="Submit"></p>
+            <p>--------------------------------------------------</p>
+            <p id="bc">Base Charge:</p>
+            <p id="fcr">Full Cost Rider:</p>
+            <p id="dsmrr">DSMR Rider:</p>
+            <p id="nccr">NCC Rider:</p>
+            <p id="eccr">ECC Rider:</p>
+            <p id=ff>Franchise Fee</p>
+            <p id="st">Subtotal:</p>
+            <p id="T">Total:</p>
 
-            <p>Enter your monthly usage in kilowatt hours (kWh):<input type="" id="usage"></p>
-            <p><input type="text" id="days"></p>
+                <script>
+                    var basep1 = 0.4603;
+                    function getElements() {
+
+                    }
+                    var preF = 0;
+                    var final= 0;
+                    function link() {
+                        console.log("It worked!");
+                        window.open("https://www.georgiapower.com/residential/save-money-and-energy/products-programs.html");
+                    }
+                    function calculate(){
+                        var basep2 = parseFloat(document.getElementById("days").value);
+                        var base = basep1*basep2;
+                        var Usage = parseFloat(document.getElementById("usage").value);
+                        var Summer = document.getElementById("summer").value;
+                        console.log(Summer);
+                        var Tax = parseFloat(document.getElementById("taxrate").value);
+                        var Inside = document.getElementById("inside").value
+                        if(Summer == "true"){
+                            console.log("It's If");
+
+                            if(Usage< 650){
+                                preF = base + Usage*0.066678;
+                            }
+                            else if(Usage<1000){
+                                preF = base + (650*0.066678) +(Usage-650)*0.110748;
+                            }
+                            else{
+                                preF = base + (650*0.066678) +(350*0.110748) + ((Usage-1000) * 0.114625);
+                            }
+                        }
+                        else{
+                            console.log("It's else");
+
+                            if(Usage< 650){
+                                preF = base + (Usage*0.062404);
+                            }
+                            else if(Usage<1000){
+                                preF = base + (Usage*0.062404);
+                            }
+                            else{
+                                preF = base + (Usage*0.062404);
+                            }
+                        }
+                        if(Summer == "true"){
+                            var fcr = Usage*0.045876;
+                        }
+                        else{
+                            var fcr = Usage*0.042859;
+                        }
+                        var DSMR = preF*.015989;
+                        var NCC = preF*.041562;
+                        var ECC = preF*.162813;
+                        if(Inside == "true"){
+                            var FF = preF*.030674;
+                        }
+                        else{
+                            var FF = preF*.011839;
+                        }
+                        var Subtotal =  preF+ DSMR + NCC + ECC + FF;
+                        var Total = Subtotal *(1+(Tax*.01));
+                        if(Total > 500){
+                            document.addEventListener("click", link, false);
+                        }
+                    document.getElementById('bc').textContent = "Base Charge: "+base.toString();
+                    document.getElementById('fcr').textContent = "Full Cost Rider: "+fcr.toString();
+                    document.getElementById('dsmrr').textContent = "DSMR Rider: "+DSMR.toString();
+                    document.getElementById('nccr').textContent = "NCC Rider: "+NCC.toString();
+                    document.getElementById('eccr').textContent = "ECC Rider: "+ECC.toString();
+                    document.getElementById('ff').textContent = "Franchise Fee: "+FF.toString();
+                    document.getElementById('st').textContent = "Subtotal: "+Subtotal.toString();
+                    document.getElementById('T').textContent = "Total: "+Total.toString();
+                    }
+                    document.getElementById("doIt").addEventListener("click",calculate,false);
+                    
+
+                    /*
+                    function getPremium() {
+                    // Get the name of the element
+                    var coverage = document.getElementByName("coverage")[0].value;
+                    var otherway = document.querySelector('input[name="coverage"]:checked').value;
+                    console.log(coverage, otherway);
+
+                    }
+                    var radioE = document.getElementById("cover1").checked;
+                    console.log(radioE);
+
+*/
+
+
+
+
+
+
+                </script>
+
+
+
+
         </div>
 
 
