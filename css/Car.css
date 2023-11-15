@@ -1,0 +1,39 @@
+:root{
+    --page-color:hsla(30, 32%, 88%, 0.9);
+    --body-color: hsla(359, 39%, 35%, 0.9);
+    --web-font: ();
+    --font-color: rgb(0, 0, 0);
+    --font-weight: ();
+    --line-height: ();
+    --text-allign: ();
+    
+
+}
+
+
+p{
+    line-height: 45px;
+    font-size: xxx-large;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+
+.center{
+    position: fixed;
+    top: 250px;
+    left: 200px;
+}
+
+.inCenter{
+    text-align: center;
+
+}
+body {
+    background-image: url(../img/carBack.jpg);
+    background-size: cover;
+}
+
+
+

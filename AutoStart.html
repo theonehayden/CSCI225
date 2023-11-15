@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Car Troubleshooting</title>
+        <link rel="stylesheet" href="css/Car.css">
+
+    </head>
+    <body>
+        <iframe id="windows" frameborder="0" width="100" height="100" border="10px"> </iframe>
+        <div class="inCenter" id="inCenter">
+            <p id="text">Starter Cranks?</p>
+
+        </div>
+   <div class="center" id="center">
+      
+        <select name="yesno" id="yesno">
+             <option value="?">select</option>
+             <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>  
+        <button  id="submit" value="submit">Submit</button>  
+        
+
+    </div>
+
+
+    
+    <script>    
+
+     
+        var newText = document.getElementById("submit");
+        var newerText = document.getElementById("text");
+        //console.log(option);
+        var tracker = "";
+      newText.addEventListener("click",function(){
+        
+            var option = document.getElementById("yesno").value;
+
+        
+        if(option == "yes"){
+            console.log("1");
+            tracker = tracker + "1";
+        }
+        else if(option == "no"){
+            console.log("0");
+            tracker = tracker + "0";
+        }
+        
+        switch(tracker) {
+            case "0": // This is the default case.
+                newerText.textContent="Starter Spins?";
+                break;
+                case "00":
+                newerText.textContent="Battery read over 12v?";
+                break;
+                case "000":
+                newerText.textContent="Jump start or pop start car and check if battery is charging.";
+                break;
+                case "01":
+                newerText.textContent="Solenoid stuck, not powerd, missing teeth on flywheel.";
+                break;
+                case "001":
+                newerText.textContent="Cleaned terminals?";
+                break;
+                case "0010":
+                newerText.textContent="Clean Battery terminals and conductors, engine ground.";
+                break;
+                case "0011":
+                newerText.textContent="With car in park or neutral, use heavy jumper or screwdriver to bypass starter relay solanoid. Test Starter.";
+                break;
+                case "1":
+                newerText.textContent="Engine fires?";
+                break;
+                case "10":
+                newerText.textContent="Spark to plugs?";
+                break;
+                case "101":
+                newerText.textContent="Fuel to Filter?";
+                break;
+                case "1010":
+                newerText.textContent="Vapor lock fuel pump blockage.";
+                break;
+                case "1011":
+                newerText.textContent="Fuel injected?";
+                break;
+                case "10111":
+                newerText.textContent="Single point check throttle body. Electronic multipoint, separate diagnostic.";
+                break;
+                case "10110":
+                newerText.textContent="Try starter spray in carb, throttle open.";
+                break;
+                case "100":
+                newerText.textContent="Spark from coil?";
+                break;
+                case "1000":
+                newerText.textContent="12V+ at coil primary?";
+                break;
+                case "10000":
+                newerText.textContent="Ignition system wiring. Voltage regulator";
+                break;
+                case "10001":
+                newerText.textContent="Test coil for internal short. Check secondar output wire resistance.";
+                break;
+                case "1001":
+                newerText.textContent="Mechanical distributor?";
+                break;
+                case "10011":
+                newerText.textContent="Check condenser points or magnetic pick-up, rotor, or cap damage.";
+                break;
+                case "10010":
+                newerText.textContent="For electronic distribution, see model manual for diagnostic checks.";
+                break;
+                case "11":
+                newerText.textContent="Starts and Stalls?";
+                break;
+                case "110":
+                newerText.textContent="Ignition timing fuel problem, crannking too slow - battery, starter.";
+                break;
+                case "111":
+                newerText.textContent="Check OBD, blink code?";
+                break;
+                case "1110":
+                newerText.textContent="Read OBD or OBD 2 or check for blink code access.";
+                break;
+                case "1111":
+                newerText.textContent="Stalls on key release to run?";
+                break;
+                case "11111":
+                newerText.textContent="Ignition 'Run' circuit or column key switch failure. Ring out with meter.";
+                break;
+                case "11110":
+                newerText.textContent="Stalls in rain?";
+                break;
+                case "111101":
+                newerText.textContent="Check for cracekd coil distributor. Check visible electrical arcing running in dark.";
+                break;
+                case "111100":
+                newerText.textContent="Stalls warm?";
+                break;
+                case "1111000":
+                newerText.textContent="On cold stalling, check for stuck choke, EGR. Check for vacuum leak.";
+                break;
+                case "1111001":
+                newerText.textContent="Adjust idle, blow out fuel filter, check fuel pump output, Check vacuum leak or sensor failure.";
+                break;
+
+
+      }
+        
+      });
+      
+
+    </script>
+
+    
+
+
+
+
+
+
+
+
+    </body>
+</html>
